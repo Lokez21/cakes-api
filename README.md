@@ -25,7 +25,7 @@ Make sure you have the following installed on your machine:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/Lokez21/cakes.git
+   git clone https://github.com/Lokez21/cakes-api.git
 
 2. **Navigate to the root of the project directory:**
    ```bash
