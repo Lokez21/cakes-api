@@ -1,5 +1,5 @@
 # Cakes API Application
-Welcome to My Cakes API django project! This README provides instructions on how to create and run a Docker image for this project.
+Welcome to my Cakes API django project! This README provides instructions on how to create and run this project using docker-compose.
 
 ## Prerequisites
 Make sure you have the following installed on your machine:
@@ -31,15 +31,11 @@ Make sure you have the following installed on your machine:
    ```bash
    cd cakes
 
-3. **Build the Docker Image:**
-   ```bash
-   docker-compose build
-
-4. **Run the Docker Container:**
+3. **Run the Docker Container:**
    ```bash
    docker-compose up
 
-5. The application will be accessible at http://localhost:8000
+4. The application will be accessible at http://localhost
 
 ## Recommended API tool
 The Cakes API application home page hosts the swagger/openAPI documentation.
@@ -48,9 +44,9 @@ Postman is recommended to test the API methods. You can download it here:
 - [Download Postman](https://www.postman.com/downloads/)
 
 #### Exposed endpoints
-- http://localhost:8000 (Method: GET) - Swagger/OpenAPI documentation
-- http://localhost:8000/list_all_cakes/ (Method: GET)
-- http://localhost:8000/select_cake/2 (Method: GET)
-- http://localhost:8000/add_cake/ (Method: POST)
-- http://localhost:8000/update_cake/2?name=vanilla_cake&comment=test (Method: PATCH)
-- http://127.0.0.1:8000/delete_cake/10 (Method: DELETE)
+- http://localhost (Method: GET) - Swagger/OpenAPI documentation
+- http://localhost/list_all_cakes/ (Method: GET)
+- http://localhost/select_cake/2 (Method: GET)
+- http://localhost/add_cake/ (Method: POST)
+- http://localhost/update_cake/2?name=vanilla_cake&comment=test (Method: PATCH)
+- http://localhost/delete_cake/10 (Method: DELETE)

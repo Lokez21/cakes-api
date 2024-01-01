@@ -1,18 +1,27 @@
+# Use an official Python runtime as a parent image
 FROM python:3.10
 
+# Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# working directory in the container
-WORKDIR /cakes_container
+# Set the working directory in the container
+WORKDIR /cakes
 
-COPY requirements.txt /cakes_container/
+# Copy the requirements file into the container at /cakes/
+COPY requirements.txt /cakes/
 
-RUN pip install -r requirements.txt
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY cakes /cakes_container/
+# Copy the current directory contents into the container at /cakes/
+COPY . /cakes/
 
-# Open the port the app runs on
-EXPOSE 8000
+# Run the collectstatic command during the image build
+RUN python manage.py collectstatic --noinput
 
-CMD ["gunicorn", "cakes_container.wsgi:application", "--bind", "0.0.0.0:8000"]
+# Expose the port the app runs on
+EXPOSE 80
+
+# Run the specified command within the container
+CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
