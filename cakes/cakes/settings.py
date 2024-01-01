@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,8 +26,8 @@ SECRET_KEY = 'django-insecure-u=w!v_+=#c1$f4fj0(fyil%myg*scb9147*$g+cj+r2&x$p$5l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'lokesh-cakes-api.uksouth.azurecontainer.io',
+                 'lokesh-cakes-api.uksouth.azurecontainer.io:80', '0.0.0.0:80']
 
 # Application definition
 
@@ -139,3 +140,9 @@ SWAGGER_SETTINGS = {
     'VALIDATOR_URL': 'http://localhost:8189',
 }
 
+# configuration for production environment
+# Static files (CSS, JavaScript, images)
+STATIC_URL = '/static/'
+
+# Collect static files in a specific directory when using 'docker-compose'
+STATIC_ROOT = '/cakes/staticfiles'
