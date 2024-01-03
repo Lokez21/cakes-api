@@ -1,4 +1,5 @@
 # Cakes API Application
+The code has been made public on 03-Jan-2024 for reviewing purposes.
 Welcome to my Cakes API django project! This README provides instructions on how to create and run this project using docker-compose.
 
 ## Prerequisites
